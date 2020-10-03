@@ -7,7 +7,6 @@ class CLI
         #start with greeting
         puts ""
         puts "Welcome to Brewery Finder!"
-        puts ""
         #ask user to indicate if they would like to search by city or state
         puts ""
         puts "Search for breweries by entering a city name."
@@ -15,7 +14,8 @@ class CLI
         @city = gets.strip.downcase 
         puts ""
         API.fetch_cities(@city)
-
+        Breweries.all 
+        binding.pry 
 
 
 
