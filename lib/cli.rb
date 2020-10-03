@@ -25,10 +25,13 @@ class CLI
         puts "If you would like to see more info, type the number of the brewery."
         puts "Type 'exit' to exit the search."
         puts ""
-        selection = gets.strip.downcase 
-        binding.pry 
+        select = gets.strip.downcase.to_i - 1
+        while select != "exit" do 
+            more_info(breweries) 
 
+         
 
+        end 
 
     end 
  
@@ -38,6 +41,13 @@ class CLI
         brewery.each_with_index do | b, i |
             puts "#{i+1}. #{b.name}: #{b.city}, #{b.state}"
         end 
+    end 
+ 
+    def more_info(brewery)
+        puts "Here is the information for your selection:"
+        binding.pry 
+
+        
     end 
  
 end

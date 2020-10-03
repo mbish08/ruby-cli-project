@@ -11,10 +11,11 @@ class API
     #this will allow me to create a numbered list for the user to select from
     #I am including the city and state with the brewery name as the city search also returns matches based on partial matches
     breweries.each do |brewery| 
-        Breweries.new(name: brewery["name"], city: brewery["city"], state: brewery["state"])
+        Breweries.new(name: brewery["name"], brewery_type: brewery["brewery_type"], street: brewery["street"], 
+        city: brewery["city"], state: brewery["state"], postal_code: brewery["postal_code"], phone: brewery["phone"], 
+        website_url: brewery["website_url"])
     end 
  end 
-
  
 
 
