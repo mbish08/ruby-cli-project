@@ -1,0 +1,21 @@
+
+[1mFrom:[0m /home/mbishop20/development/flatiron/projects/ruby-cli-project/lib/cli.rb:17 CLI#start:
+
+     [1;34m6[0m: [32mdef[0m [1;34mstart[0m 
+     [1;34m7[0m:     [1;34m#start with greeting[0m
+     [1;34m8[0m:     puts [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m
+     [1;34m9[0m:     puts [31m[1;31m"[0m[31mWelcome to Brewery Finder![1;31m"[0m[31m[0m
+    [1;34m10[0m:     puts [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m
+    [1;34m11[0m:     [1;34m#ask user to indicate if they would like to search by city or state[0m
+    [1;34m12[0m:     puts [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m
+    [1;34m13[0m:     puts [31m[1;31m"[0m[31mWould you like to search for breweries by city names or a state?[1;31m"[0m[31m[0m
+    [1;34m14[0m:     puts [31m[1;31m"[0m[31mPlease type 'city' or 'state'.[1;31m"[0m[31m[0m
+    [1;34m15[0m:     puts [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m
+    [1;34m16[0m:     selection = gets.strip.downcase 
+ => [1;34m17[0m:     binding.pry 
+    [1;34m18[0m: 
+    [1;34m19[0m: 
+    [1;34m20[0m: 
+    [1;34m21[0m: 
+    [1;34m22[0m: [32mend[0m 
+
