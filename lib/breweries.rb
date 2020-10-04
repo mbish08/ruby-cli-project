@@ -25,6 +25,8 @@ class Breweries
         @@all 
     end 
 
+    
+
   #  binding.pry
 #   "name": "Deadwood Brewery / Boston Bowl",
 #     "brewery_type": "brewpub",

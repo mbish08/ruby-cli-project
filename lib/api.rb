@@ -17,8 +17,18 @@ class API
     end 
  end 
  
+ def self.fetch_states(state)
+    url = "https://api.openbrewerydb.org/breweries?by_state=#{state}"
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    breweries = JSON.parse(response)
+    breweries.each do |brewery| 
+        Breweries.new(name: brewery["name"], brewery_type: brewery["brewery_type"], street: brewery["street"], 
+        city: brewery["city"], state: brewery["state"], postal_code: brewery["postal_code"], phone: brewery["phone"], 
+        website_url: brewery["website_url"])
+    end 
+ end 
 
-
-
+ 
 
 end 
