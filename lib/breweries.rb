@@ -2,13 +2,13 @@
  
 class Breweries 
  
-    attr_accessor :name, :brewery_type, :street, :city, :state, :postal_code, :phone, :website_url
+    attr_accessor :name, :brewery_type, :street, :city, :state, :postal_code, :phone, :website_url, :searched_city
 
     #create a place to store all of the breweries
     @@all = []
 
     #Breweries.new from API class comes here
-    def initialize(name:, brewery_type:, street:, city:, state:, postal_code:, phone:, website_url:)
+    def initialize(name:, brewery_type:, street:, city:, state:, postal_code:, phone:, website_url:, searched_city:)
         @name = name
         @brewery_type = brewery_type
         @street = street
@@ -17,6 +17,7 @@ class Breweries
         @postal_code = postal_code
         @phone = phone
         @website_url = website_url
+        @searched_city = searched_city
         @@all << self 
     end 
 
@@ -24,7 +25,10 @@ class Breweries
     def self.all
         @@all 
     end 
-
+    
+    def self.find_by_searched_city(city)
+        @@all.select { |b| b.searched_city.downcase == city}
+    end 
     
 
   #  binding.pry
