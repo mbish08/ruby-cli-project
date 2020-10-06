@@ -21,34 +21,29 @@ class CLI
         while @city != "exit"
             puts ""
             API.fetch_cities(@city)
-            breweries = Breweries.find_by_searched_city(@city) #add a way to check to see if they are already there (find, include, etc
-            #to make sure we don't get duplicates
+            breweries = Breweries.find_by_searched_city(@city) 
             print_all_city(breweries)
             puts ""
             puts "If you would like to see more info, type the number of the brewery."
             puts "Type 'exit' to exit the search."
             puts ""
             @selection = gets.strip
+            #START HERE - need to figure out how to get out of the loop and have exit work...
+            if @selection
             brewery = Breweries.find_by_searched_city(@city)[selection.to_i - 1]
             more_info_city(brewery) 
-        end 
+            else 
+
+            end 
+         end 
         puts "Type another city to search or type 'exit' to exit."
         inp = gets.strip 
-        puts ""
-        puts ".~~~~."
-        puts "i====i_"
-        puts "|cccc|_)"
-        puts "|cccc|"   
-        puts "`-==-"
-        puts ""
-        puts "Cheers!"
-        puts ""
     end 
  
     def print_all_city(brewery) #this method creates the numbered list that the user will see and includes the city/state
         puts "Here are the breweries for city names that match #{@city.capitalize}:"
         puts ""
-        brewery.each.with_index(1) do | b, i |
+        brewery.each.with_index(1).uniq do | b, i |
             puts "#{i}. #{b.name}: #{b.city}, #{b.state}"
         end 
     end 

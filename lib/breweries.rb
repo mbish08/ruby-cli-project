@@ -2,13 +2,15 @@
  
 class Breweries 
  
-    attr_accessor :name, :brewery_type, :street, :city, :state, :postal_code, :phone, :website_url, :searched_city
+    attr_accessor :id, :name, :brewery_type, :street, :city, :state, :postal_code, :phone, :website_url, :searched_city
 
     #create a place to store all of the breweries
     @@all = []
+    @@some = []
 
     #Breweries.new from API class comes here
-    def initialize(name:, brewery_type:, street:, city:, state:, postal_code:, phone:, website_url:, searched_city:)
+    def initialize(id:, name:, brewery_type:, street:, city:, state:, postal_code:, phone:, website_url:, searched_city:)
+        @id = id
         @name = name
         @brewery_type = brewery_type
         @street = street
@@ -27,21 +29,8 @@ class Breweries
     end 
     
     def self.find_by_searched_city(city)
-        @@all.select { |b| b.searched_city.downcase == city}
+        @@all.uniq do |b| 
+            b.id
+        end 
     end 
-    
-
-  #  binding.pry
-#   "name": "Deadwood Brewery / Boston Bowl",
-#     "brewery_type": "brewpub",
-#     "street": "820 William T Morrissey Blvd",
-#     "city": "Boston",
-#     "state": "Massachusetts",
-#     "postal_code": "02122-3404",
-#     "country": "United States",
-#     "longitude": "-71.047997482376",
-#     "latitude": "42.2948560502166",
-#     "phone": "6177401440",
-#     "website_url": "http://www.deadwoodbrewery.com",
-
 end 
