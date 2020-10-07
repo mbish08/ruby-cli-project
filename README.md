@@ -4,9 +4,7 @@ This Ruby Gem is a CLI that allows a user to search for breweries by city.  By e
 list of breweries to choose from.  After selecting a brewery, the user is then provided with the full address, phone 
 number, and website address.  
 
-##Install instructions
-
-##Contributor's guide
+To use, clone repo from Github and enter 'ruby bin/start' in your terminal
 
 License info:
 This gem is available as open source under the MIT License (https://opensource.org/licenses/MIT)
