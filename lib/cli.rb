@@ -25,19 +25,18 @@ class CLI
             print_all_city(breweries)
             puts ""
             puts "If you would like to see more info, type the number of the brewery."
-            puts "Type 'exit' to exit the search."
             puts ""
             @selection = gets.strip
             #START HERE - need to figure out how to get out of the loop and have exit work...
             if @selection
             brewery = Breweries.find_by_searched_city(@city)[selection.to_i - 1]
             more_info_city(brewery) 
-            else 
-
             end 
-         end 
+        puts ""
         puts "Type another city to search or type 'exit' to exit."
-        inp = gets.strip 
+        puts ""
+        @city = gets.strip.downcase
+        end 
     end 
  
     def print_all_city(brewery) #this method creates the numbered list that the user will see and includes the city/state
