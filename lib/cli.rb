@@ -26,12 +26,13 @@ class CLI
             puts ""
             puts "If you would like to see more info, type the number of the brewery."
             puts ""
-            @selection = gets.strip
-            #START HERE - need to figure out how to get out of the loop and have exit work...
-            if @selection
+            @selection = gets.strip.to_i 
+            until @selection >= 1 && @selection <= 20
+                puts "Please type a number from the list."
+                @selection = gets.strip.to_i
+            end 
             brewery = Breweries.find_by_searched_city(@city)[selection.to_i - 1]
             more_info_city(brewery) 
-            end 
         puts ""
         puts "Type another city to search or type 'exit' to exit."
         puts ""
