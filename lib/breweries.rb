@@ -6,6 +6,7 @@ class Breweries
 
     #create a place to store all of the breweries
     @@all = []
+    @@some = []
 
     #Breweries.new from API class comes here
     def initialize(id:, name:, brewery_type:, street:, city:, state:, postal_code:, phone:, website_url:, searched_city:)
@@ -19,17 +20,39 @@ class Breweries
         @phone = phone
         @website_url = website_url
         @searched_city = searched_city
-        @@all << self 
     end 
 
-    #I need to be able to display @@all when it is called in CLI class
     def self.all
         @@all 
     end 
+
+    def save
+        @@all << self
+    end 
+
+    def self.find(id)
+        @@all.find { |b| b.id == id } 
+    end 
+
+    def self.create(city)
+        city = self.new(city)
+        city.save  
+    end 
+
+    def self.find_or_create(city)
+        find(city) || create(city)
+    end 
     
     def self.find_by_searched_city(city)
-        @@all.uniq do |b| 
-            b.id
+        @@all.find_all do |b| 
+         #   binding.pry
+            b.searched_city == city
         end 
     end 
+
+    # def self.brewery_count
+    #     @@some << @@all.uniq
+    #     @@some.count 
+    #   #  binding.pry
+    # end 
 end 
