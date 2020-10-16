@@ -21,7 +21,7 @@ class CLI
         while @city_input != "exit"
             puts ""
             API.fetch_cities(@city_input)
-            breweries = Breweries.find_by_searched_city(@city_input) 
+            breweries = Breweries.find_by_searched_city(@city_input)
        #     binding.pry
             print_all_city(breweries)
             puts ""

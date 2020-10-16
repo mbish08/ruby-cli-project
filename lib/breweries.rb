@@ -30,24 +30,25 @@ class Breweries
         @@all << self
     end 
 
-    def self.find(id)
-        @@all.find { |b| b.id == id } 
+    def self.find_by(city)
+        @@all.find do |b| 
+      #      binding.pry 
+            b.id == city.values[0]
+        end 
     end 
 
     def self.create(city)
         city = self.new(city)
         city.save  
+        city 
     end 
 
     def self.find_or_create(city)
-        find(city) || create(city)
+        find_by(city) || create(city)
     end 
     
     def self.find_by_searched_city(city)
-        @@all.find_all do |b| 
-         #   binding.pry
-            b.searched_city == city
-        end 
+        @@all.find_all { |b| b.searched_city == city }
     end 
 
     # def self.brewery_count
