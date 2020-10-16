@@ -28,8 +28,8 @@ class CLI
             puts "If you would like to see more info, type the number of the brewery."
             puts ""
             @selection = gets.strip.to_i 
-            until @selection >= 1 
-               # binding.pry
+    #        binding.pry
+            until @selection >= 1 && @selection <= Breweries.all.count
                 puts "Please type a number from the list."
                 @selection = gets.strip.to_i
             end 
