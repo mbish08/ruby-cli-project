@@ -1,12 +1,8 @@
-#this file is where objects are instantiated, where objects are tracked, and where responses are turned into objects
- 
 class Breweries 
  
     attr_accessor :id, :name, :brewery_type, :street, :city, :state, :postal_code, :phone, :website_url, :searched_city
 
-    #create a place to store all of the breweries
     @@all = []
-    @@some = []
 
     #Breweries.new from API class comes here
     def initialize(id:, name:, brewery_type:, street:, city:, state:, postal_code:, phone:, website_url:, searched_city:)
@@ -32,7 +28,6 @@ class Breweries
 
     def self.find_by(city)
         @@all.find do |b| 
-      #      binding.pry 
             b.id == city.values[0]
         end 
     end 
@@ -50,10 +45,4 @@ class Breweries
     def self.find_by_searched_city(city)
         @@all.find_all { |b| b.searched_city == city }
     end 
-
-    # def self.brewery_count
-    #     @@some << @@all.uniq
-    #     @@some.count 
-    #   #  binding.pry
-    # end 
 end 
