@@ -20,7 +20,16 @@ class CLI
         @city_input = gets.strip.downcase
         while @city_input != "exit"
             puts ""
-            API.fetch_cities(@city_input)
+      #      binding.pry
+       #     API.fetch_cities(@city_input)
+            while API.fetch_cities(@city_input) == []
+                puts ""
+                puts "Your search didn't return any results."
+                puts ""
+                puts "Please try another city."
+                puts ""
+                @city_input = gets.strip.downcase
+            end 
             breweries = Breweries.find_by_searched_city(@city_input)
        #     binding.pry
             print_all_city(breweries)
