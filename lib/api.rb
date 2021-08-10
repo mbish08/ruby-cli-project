@@ -5,7 +5,6 @@ class API
     uri = URI(url)
     response = Net::HTTP.get(uri)
     breweries = JSON.parse(response)
-    #time to create a list of breweries for selected city
     #this will allow me to create a numbered list for the user to select from
     #I am including the city and state with the brewery name as the city search also returns matches based on partial matches
     breweries.collect do |brewery| 
