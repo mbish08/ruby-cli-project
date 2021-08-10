@@ -7,4 +7,4 @@ number, and website address.
 To use, clone repo from Github and enter 'ruby bin/start' in your terminal
 
 License info:
-This gem is available as open source under the MIT License (https://opensource.org/licenses/MIT)
+This app is available as open source under the MIT License (https://opensource.org/licenses/MIT)
