@@ -4,7 +4,6 @@ class Breweries
 
     @@all = []
 
-    #Breweries.new from API class comes here
     def initialize(id:, name:, brewery_type:, street:, city:, state:, postal_code:, phone:, website_url:, searched_city:)
         @id = id
         @name = name
